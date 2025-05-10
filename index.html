@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sri Lanka Event Calendar 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="calendar-container">
+    <aside class="calendar-sidebar">
+      <div class="sidebar-header">
+        <button id="prev-year">&lt;</button>
+        <span id="sidebar-year"></span>
+        <button id="next-year">&gt;</button>
+      </div>
+      <ul class="month-list" id="month-list"></ul>
+    </aside>
+    <main class="calendar-main">
+      <div class="calendar-header">
+        <h2 id="calendar-title"></h2>
+      </div>
+      <div class="calendar-grid">
+        <div class="calendar-weekdays" id="calendar-weekdays"></div>
+        <div class="calendar-days" id="calendar-days"></div>
+      </div>
+    </main>
+    <aside class="calendar-events-panel">
+      <h3 id="event-date"></h3>
+      <div id="event-details"></div>
+      <div id="add-event-form">
+        <input type="text" id="event-title" placeholder="Enter event title...">
+        <button id="save-event-btn">Add Event</button>
+      </div>
+    </aside>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
