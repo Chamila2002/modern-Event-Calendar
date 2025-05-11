@@ -246,5 +246,30 @@ eventTitle.addEventListener('keypress', (e) => {
   }
 });
 
+// THEME TOGGLE LOGIC
+const themeToggle = document.getElementById('theme-toggle');
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+  themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+}
+function loadTheme() {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+    setTheme(savedTheme);
+  } else {
+    // Use system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'dark' : 'light');
+  }
+}
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+});
+loadTheme();
+
+
 // Initialize
 renderAll();
+
